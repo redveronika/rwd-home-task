@@ -5,6 +5,12 @@
     src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
 }
 
+@media (min-width: 1200px) {
+    html {
+        font-size: 18px;
+    }
+}
+
 body {
     font-family: "system";
     margin: 0;
@@ -47,6 +53,7 @@ body {
     flex-wrap: wrap;
     max-width: 60ch;
     font-size: 1.1rem;
+    line-height: 1.7rem;
 }
 
 .main__title {
@@ -103,7 +110,7 @@ body {
     flex-basis: 460px;
 }
 
-.gallery__item:hover .gallery__img {
+.gallery__item:hover .gallery__img, .gallery__item:focus .gallery__img {
     filter: grayscale(0%);
     transition: filter 0.4s ease;
 }

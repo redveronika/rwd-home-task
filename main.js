@@ -22,7 +22,10 @@
 
         show: function (__this) {
             var clientWidth = document.documentElement.clientWidth,
-                imageSize = clientWidth <= 550 ? '550' : clientWidth <= 800 ? '800' : clientWidth <= 1100 ? '1100': 'full-size';
+                pixelRatio = window.devicePixelRatio,
+                imageSize = clientWidth <= 550 ? pixelRatio === 1 ? '550' : '1100' :
+                    clientWidth <= 800 ? pixelRatio === 1 ? '800' : '1600' :
+                    clientWidth <= 1100 ? pixelRatio === 1 ? '1100': 'full-size' : 'full-size';
             document.querySelector('.full-size__img').src = 'images/'+ imageSize + '/' +  __this.getAttribute('file-name');
             if (this.fullSize.className.indexOf('show') === -1) {
                 this.fullSize.className += ' show';
