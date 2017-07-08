@@ -27,6 +27,7 @@
                     clientWidth <= 800 ? pixelRatio === 1 ? '800' : '1600' :
                     clientWidth <= 1100 ? pixelRatio === 1 ? '1100': 'full-size' : 'full-size';
             document.querySelector('.full-size__img').src = 'images/'+ imageSize + '/' +  __this.getAttribute('file-name');
+            document.querySelector('.full-size__img').alt = __this.getAttribute('alt');
             if (this.fullSize.className.indexOf('show') === -1) {
                 this.fullSize.className += ' show';
             }
